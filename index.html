@@ -1,194 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta Tags for Responsive Design -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>GM Fencing & Groundworks - Groundworks Done Right</title>
-    <!-- FontAwesome CSS CDN without integrity check -->
+    
+    <!-- FontAwesome CSS CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous">
+    
     <!-- Animate.css CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            background-color: #fff;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-
-        .logo img {
-            height: 50px;
-        }
-
-        .hamburger {
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #000; /* Set hamburger icon color to black */
-        }
-
-        nav {
-            display: none;
-            position: absolute;
-            top: 100%;
-            right: 2rem;
-            background-color: white;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            border-radius: 5px;
-            overflow: hidden;
-            animation-duration: 0.5s;
-            animation-fill-mode: both;
-        }
-
-        nav a {
-            display: block;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            color: #000;
-            border-bottom: 1px solid #ddd;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            background-color: #fdd835;
-            color: #000;
-        }
-
-        .hero {
-            position: relative;
-            height: 100vh;
-            background: url('background.jpg') no-repeat center center/cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 5vw;
-        }
-
-        .hero .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-        .hero .content {
-            position: relative;
-            z-index: 2;
-            color: white;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            text-transform: uppercase;
-        }
-
-        .hero h1 .highlight {
-            color: #fdd835;
-        }
-
-        .hero .buttons {
-            margin-top: 2rem;
-            display: flex;
-            gap: 2vw; /* Use viewport width to ensure proper spacing on mobile */
-            justify-content: center; /* Align buttons next to each other */
-        }
-
-        .btn-primary, .btn-secondary {
-            padding: 1rem 2vw; /* Responsive padding */
-            border: none;
-            text-transform: uppercase;
-            cursor: pointer;
-            font-weight: bold;
-            border-radius: 5px;
-            text-decoration: none; /* Remove underline */
-            font-size: 0.7rem; /* Decreased size by 30% */
-            width: 100%;
-            max-width: 200px; /* Decreased width by 30% */
-            text-align: center;
-        }
-
-        .btn-primary {
-            background-color: #fdd835;
-            color: #000;
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            border: 2px solid #fdd835;
-            color: #fdd835;
-        }
-
-        footer {
-            padding: 1rem;
-            text-align: center;
-            background-color: #333;
-            color: white;
-        }
-
-        /* Show navigation on click */
-        .show {
-            display: block;
-            animation: fadeInDown;
-            animation-duration: 0.5s;
-        }
-
-    </style>
+    
+    <!-- Link to CSS Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Header Section -->
     <header>
-        <div class="logo">
-            <img src="logo.png" alt="GM Fencing & Groundworks Logo">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="#hero"><img src="img/logo.png" alt="GM Fencing & Groundworks Logo"></a>
+            </div>
+            
+            <!-- Desktop Navigation Menu -->
+            <ul class="nav-menu desktop-menu">
+                <li><a href="#how-we-work">How We Work</a></li>
+                <li><a href="#get-in-touch">Get In Touch</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            
+            <!-- Hidden Checkbox for Mobile Menu Toggle -->
+            <input type="checkbox" id="nav-toggle-checkbox" class="nav-toggle-checkbox">
+            
+            <!-- Mobile Menu Button (Hamburger) -->
+            <label for="nav-toggle-checkbox" class="nav-toggle-label" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </label>
+            
+            <!-- Mobile Navigation Menu -->
+            <ul class="nav-menu mobile-menu">
+                <li><a href="#how-we-work">How We Work</a></li>
+                <li><a href="#get-in-touch">Get In Touch</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-        <div class="hamburger" onclick="toggleMenu()">
-            <i class="fas fa-bars"></i>
-        </div>
-        <nav id="nav" class="animate__animated">
-            <a href="#how-we-work">How We Work</a>
-            <a href="#get-in-touch">Get In Touch</a>
-        </nav>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="overlay"></div>
         <div class="content">
-            <h1>Groundworks Done <span class="highlight">Right</span></h1>
+            <h1>Fencing &amp; Groundworks  <span class="highlight">Done Right</span></h1>
             <div class="buttons">
-                <a href="#get-in-touch" class="btn-primary">Get In Touch</a>
+                <a href="#get-in-touch" class="btn-primary">Call us</a>
                 <a href="#how-we-work" class="btn-secondary">How We Work</a>
             </div>
         </div>
     </section>
 
+    <!-- How We Work Section -->
+    <section id="how-we-work" class="how-we-work-section">
+    <div class="content">
+        <h2>How We Work</h2>
+        <p>At GM Fencing & Groundworks, we follow a structured approach to ensure every project is completed to the highest standards. From initial consultation to final completion, we maintain clear communication and professionalism throughout.</p>
+    </div>
+</section>
+
+    <section id="why-choose-us" class="why-choose-us-section">
+    <h2 class="animate__animated animate__fadeInUp">Why Choose Us?</h2>
+    <div class="features-grid">
+        <div class="feature animate__animated animate__fadeInLeft">
+            <i class="fas fa-check-circle"></i>
+            <h3>Reliable</h3>
+            <p>We understand the importance of your trust. Customer satisfaction is our priority, and we make a point of meeting our commitments and not letting our clients down.</p>
+        </div>
+        <div class="feature animate__animated animate__fadeInRight">
+            <i class="fas fa-star"></i>
+            <h3>Quality</h3>
+            <p>Your outside spaces are the first impressions made. We know that, and we only deliver quality designs and finishes on all projects.</p>
+        </div>
+        <div class="feature animate__animated animate__fadeInLeft">
+            <i class="fas fa-handshake"></i>
+            <h3>Trustworthy</h3>
+            <p>We deliver when we say we will. Your job, commercial or domestic, is handled with dedication and care to exceed all expectations.</p>
+        </div>
+        <div class="feature animate__animated animate__fadeInRight">
+            <i class="fas fa-tag"></i>
+            <h3>Competitive Pricing</h3>
+            <p>The best quality doesn’t need to come with an extortionate price tag. We provide exceptional quality of work while remaining competitive and affordable.</p>
+        </div>
+        <div class="feature animate__animated animate__fadeInUp">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Health & Safety</h3>
+            <p>Your safety and ours is always our top priority. Every job is assessed and carried out with a full safety inspection to meet all health and safety requirements.</p>
+        </div>
+    </div>
+</section>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Information about your team, history, and what sets you apart.</p>
+    </section>
+
+    <!-- Area We Work In Section -->
+    <section id="areas-we-serve" class="areas-we-serve-section">
+    <h2 class="animate__animated animate__fadeInUp">Areas We Serve</h2>
+    <p>We proudly serve Glasgow and the surrounding areas, ensuring that all our clients receive exceptional service wherever they are located.</p>
+    <div class="map-container">
+        <iframe
+            class="animate__animated animate__zoomIn"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21294.276902501553!2d-4.254458983063263!3d55.8642377791337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4888447a32b1151d%3A0x1234567890abcdef!2sGlasgow!5e0!3m2!1sen!2suk!4v1234567890123!5m2!1sen!2suk"
+            width="100%"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            aria-label="Map of Glasgow and Surrounding Areas">
+        </iframe>
+    </div>
+</section>
+
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form action="your-form-handler" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
     <footer>
         <p>© 2024 GM Fencing & Groundworks. All rights reserved.</p>
+        <!-- Optional: Add social media links or additional navigation here -->
     </footer>
-
-    <script>
-        function toggleMenu() {
-            var nav = document.getElementById("nav");
-            if (nav.classList.contains("show")) {
-                nav.classList.remove("show");
-            } else {
-                nav.classList.add("show");
-            }
-        }
-    </script>
 </body>
 </html>
